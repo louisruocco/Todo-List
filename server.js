@@ -10,3 +10,26 @@ const port = process.env.PORT || 3000;
 app.listen(port, () =>  console.log("Listening at " + port));
 
 dotenv.config({path: "./.env"});
+
+const options = {
+    host: process.env.HOST, 
+    user: process.env.USER, 
+    password: process.env.PASSWORD, 
+    database: process.env.DATABASE
+}
+
+const sessionStore = new MySQLStore(options);
+
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(flash());
+app.set("view engine", "ejs");
+app.use(session({
+    name: process.env.SESS_NAME, 
+    secret: process.env.SESS_SECRET, 
+    store: sessionStore, 
+    resave: false, 
+    saveUninitialized: false, 
+}));
