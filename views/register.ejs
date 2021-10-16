@@ -12,9 +12,9 @@
     <div class="container">
         <h1>Register</h1>
         <div class="input-section">
-            <form action="">
+            <form action="/auth/register" method = "POST">
                 <div class="name-section">
-                    <input type="text" name = "name" placeholder = "Username" required>
+                    <input type="text" name = "username" placeholder = "Username" required>
                 </div>
                 <div class="email-section">
                     <input type="text" name = "email" placeholder = "Email Address" required>
@@ -25,6 +25,11 @@
                 <button>Register</button>
             </form>
             <a href="/login">Login</a>
+            <% if(userexists.length > 0){ %>
+                <div class="error">
+                    <h3><%= userexists %></h3>
+                </div>
+            <% } %>
         </div>
     </div>
 </body>

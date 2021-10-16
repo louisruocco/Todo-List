@@ -1,10 +1,10 @@
 const express = require("express");
 const session = require("express-session");
 const db = require("../db");
-const flash = require("connect-flash");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+    const { userId } = req.session;
     res.render("landing");
 });
 
@@ -13,7 +13,7 @@ router.get("/login", (req, res) => {
 })
 
 router.get("/register", (req, res) => {
-    res.render("register");
+    res.render("register", {userexists : req.flash("userexists") });
 });
 
 module.exports = router;

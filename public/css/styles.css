@@ -127,3 +127,12 @@ input {
     color: white;
     transform: scale(1.15);
 }
+
+.error {
+    margin-top: 20px;
+    background: rgba(255, 0, 0, 0.5);
+    color: red;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+}

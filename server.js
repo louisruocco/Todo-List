@@ -36,3 +36,4 @@ app.use(session({
 }));
 
 app.use("/", require("./routes/pages"));
+app.use("/auth", require("./routes/auth"));
