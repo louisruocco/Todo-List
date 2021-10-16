@@ -5,6 +5,41 @@
     padding: 0;
 }
 
+body {
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 75px;
+    color: white;
+}
+
+input {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 25px;
+    outline: none;
+    padding: 5px;
+    margin: 7px;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: black;
+    opacity: .7;
+    z-index: -1;
+}
+
 .title {
     display: flex;
     width: 100%;
@@ -12,10 +47,6 @@
     justify-content: center;
     align-items: center;
     font-size: 27px;
-}
-
-.title h1 {
-    font-family: 'Poppins', sans-serif;
 }
 
 .authentication {
@@ -34,9 +65,65 @@
     border-radius: 10px;
     transition: .2s ease;
     cursor: pointer;
+    color: rgb(0, 0, 85);
 }
 
 .authentication a:hover {
     transition: .2s ease;
+    transform: scale(1.15);
+}
+
+.container{ 
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+}
+
+.input-section {
+    background: rgba(0, 0, 0, 0.699);
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 140%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.input-section button {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+.input-section button:hover {
+    transition: .2s ease;
+    background: seagreen;
+    transform: scale(1.15);
+}
+
+.input-section a {
+    text-decoration: none;
+    color: seagreen;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    padding-top: 50px;
+    transition: .2s ease;
+}
+
+.input-section a:hover {
+    transition: .2s ease;
+    color: white;
     transform: scale(1.15);
 }
