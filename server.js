@@ -1,6 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const dotenv = require("dotenv");
+const db = require("./db");
 const MySQLStore = require("express-mysql-session");
 const ejs = require("ejs");
 const flash = require("connect-flash");
