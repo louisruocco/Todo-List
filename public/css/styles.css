@@ -142,31 +142,60 @@ input {
 }
 
 .todo-list {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .todo-list input {
     background: black;
     border: none;
-    width: 20%;
+    width: 400px;
 }
 
-.todo-list button {
+.add {
     position: absolute;
     height: 42px;
     margin-top: 7px;
     margin-right: 5px;
     background: black;
-}
-
-.todos {
-    color: white;
-    display: flex;
-    width: 100%;
-}
-
-.todos button {
-    background: white;
     outline: none;
     border: none;
+    color: seagreen;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.todo {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    background: white;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.todo li {
+    list-style: none;
+    padding: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+}
+
+.todo button {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: none;
+    color: red;
+    font-size: 18px;
+    transition: .2s ease;
+}
+
+.todo button:hover {
+    transition: .2s ease;
+    transform: scale(1.15);
 }

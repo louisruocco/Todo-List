@@ -73,7 +73,7 @@ router.post("/:email/addTodo", (req, res) => {
             if(err){
                 return console.log(err);
             } else {
-                console.log(item.todo);
+                res.redirect("back");
             }
         })
     })
