@@ -25,7 +25,7 @@
                 <ul>
                    <div class="todo">
                         <li><%= todo.todo %></li>
-                        <form action="/auth/<%= todo.todo %>/deleteTodo">
+                        <form action="/auth/<%= todo.todo %>/deleteTodo" method = "POST">
                             <button class = "delete">
                                 <i class="fas fa-times"></i>
                             </button>

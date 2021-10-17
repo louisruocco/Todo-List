@@ -77,6 +77,16 @@ router.post("/:email/addTodo", (req, res) => {
             }
         })
     })
+});
+
+router.post("/:todo/deleteTodo", (req, res) => {
+    db.query("DELETE FROM todos WHERE todo = ?", [req.params.todo], (err) => {
+        if(err){
+            return console.log(err);
+        } else {
+            res.redirect("back");
+        }
+    })
 })
 
 module.exports = router;
