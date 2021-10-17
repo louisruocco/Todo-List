@@ -30,7 +30,7 @@ router.post("/register", redirectHome, (req, res) => {
             if(err){
                 return console.log(err)
             } else {
-                res.send("User Successfully Registered");
+                res.redirect("/login");
             }
         })
     })
@@ -60,7 +60,7 @@ router.post("/login", redirectHome, (req, res) => {
 
 router.post("/:email/addTodo", (req, res) => {
     const { todo } = req.body;
-    db.query("SELECT todo FROM todos WHERE todo = ?", [todo], (err, todos) => {
+    db.query("SELECT todo FROM todos WHERE todo = ? AND id = ?", [todo, req.session.userId], (err, todos) => {
         if(err){
             return console.log(err);
         }
@@ -85,6 +85,17 @@ router.post("/:todo/deleteTodo", (req, res) => {
             return console.log(err);
         } else {
             res.redirect("back");
+        }
+    })
+});
+
+router.post("/logout", (req, res) => {
+    req.session.destroy((err) => {
+        if(err){
+            return res.redirect("/home");
+        } else {
+            res.clearCookie(process.env.SESS_NAME);
+            res.redirect("/");
         }
     })
 })

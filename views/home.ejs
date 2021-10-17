@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="overlay"></div>
+    <div class="logout">
+        <form action="/auth/logout" method = "POST">
+            <button>Logout</button>
+        </form>
+    </div>
     <div class="title">
         <h1><%= details[0].name %>'s To Do List</h1>
     </div>
