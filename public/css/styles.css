@@ -17,6 +17,10 @@ h1 {
     color: white;
 }
 
+a {
+    text-decoration: none;
+}
+
 input {
     font-family: 'Rajdhani', sans-serif;
     font-size: 25px;
@@ -47,6 +51,7 @@ input {
     justify-content: center;
     align-items: center;
     font-size: 27px;
+    text-transform: capitalize;
 }
 
 .authentication {
@@ -114,7 +119,6 @@ input {
 }
 
 .input-section a {
-    text-decoration: none;
     color: seagreen;
     font-family: 'Rajdhani', sans-serif;
     font-size: 18px;
