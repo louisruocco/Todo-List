@@ -140,3 +140,33 @@ input {
     font-size: 15px;
     padding: 10px;
 }
+
+.todo-list {
+    text-align: center;
+}
+
+.todo-list input {
+    background: black;
+    border: none;
+    width: 20%;
+}
+
+.todo-list button {
+    position: absolute;
+    height: 42px;
+    margin-top: 7px;
+    margin-right: 5px;
+    background: black;
+}
+
+.todos {
+    color: white;
+    display: flex;
+    width: 100%;
+}
+
+.todos button {
+    background: white;
+    outline: none;
+    border: none;
+}

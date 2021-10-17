@@ -21,6 +21,9 @@
             <% todos.forEach(todo => { %>
                 <ul>
                     <li><%= todo.todo %></li>
+                    <form action="/auth/<%= todo.todo %>/deteTodo">
+                        <button class = "delete">Delete</button>
+                    </form>
                 </ul>
             <% }) %>
         </div>
