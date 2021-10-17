@@ -34,13 +34,18 @@ router.get("/register", redirectHome, (req, res) => {
 });
 
 router.get("/home", redirectLanding, (req, res) => {
-    db.query("SELECT name FROM users WHERE id = ?", [req.session.userId], (err, name) => {
+    db.query("SELECT name, email FROM users WHERE id = ?", [req.session.userId], (err, details) => {
         if(err){
             return console.log(err);
-        } else {
-            console.log(name);
-            res.render("home", {name});
         }
+
+        db.query("SELECT todo FROM todos WHERE id = ?", [req.session.userId], (err, todos) => {
+            if(err){
+                return console.log(err);
+            } else {
+                res.render("home", {details, todos});
+            }
+        })
     })
 })
 module.exports = router;

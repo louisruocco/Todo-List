@@ -56,6 +56,27 @@ router.post("/login", redirectHome, (req, res) => {
             res.redirect("/home");
         }
     })
+});
+
+router.post("/:email/addTodo", (req, res) => {
+    const { todo } = req.body;
+    db.query("SELECT todo FROM todos WHERE todo = ?", [todo], (err, todos) => {
+        if(err){
+            return console.log(err);
+        }
+
+        if(todos.length > 0){
+            return res.send("todo already added");
+        }
+
+        db.query("INSERT INTO todos SET ?", {id: req.session.userId, email: req.params.email, todo: todo}, (err, item) => {
+            if(err){
+                return console.log(err);
+            } else {
+                console.log(item.todo);
+            }
+        })
+    })
 })
 
 module.exports = router;
