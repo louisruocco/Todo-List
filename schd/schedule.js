@@ -27,7 +27,6 @@ const sendEmail = schedule.scheduleJob("* */2 * * *", () => {
                     <h1>${todo.todo} is outstanding</h1>
 
                     <b>Make Sure to tick it off the list when completed!</b>
-
                     `
                 };
 
