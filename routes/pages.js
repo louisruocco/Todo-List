@@ -26,7 +26,7 @@ router.get("/", redirectHome, (req, res) => {
 });
 
 router.get("/login", redirectHome, (req, res) => {
-    res.render("login");
+    res.render("login", {usernotfound: req.flash("usernotfound")});
 })
 
 router.get("/register", redirectHome, (req, res) => {
@@ -43,7 +43,7 @@ router.get("/home", redirectLanding, (req, res) => {
             if(err){
                 return console.log(err);
             } else {
-                res.render("home", {details, todos});
+                res.render("home", {details, todos, todoexists: req.flash("todoexists")});
             }
         })
     })

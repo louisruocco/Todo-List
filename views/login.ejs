@@ -21,6 +21,11 @@
                 </div>
                 <button>Login</button>
             </form>
+            <% if(usernotfound.length > 0){ %>
+                <div class="error">
+                    <h3><%= usernotfound %></h3>
+                </div>
+            <% } %>
             <a href="/register">Register</a>
         </div>
     </div>

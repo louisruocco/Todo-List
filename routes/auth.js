@@ -66,7 +66,8 @@ router.post("/:email/addTodo", (req, res) => {
         }
 
         if(todos.length > 0){
-            return res.send("todo already added");
+            req.flash("todoexists", "Todo Already Listed");
+            res.redirect("back");
         }
 
         db.query("INSERT INTO todos SET ?", {id: req.session.userId, email: req.params.email, todo: todo}, (err, item) => {
