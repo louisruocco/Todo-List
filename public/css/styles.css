@@ -199,3 +199,24 @@ input {
     transition: .2s ease;
     transform: scale(1.15);
 }
+
+.logout {
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+}
+
+.logout button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: rgba(255, 0, 0, 0.616);
+    transition: .1s ease;
+}
+
+.logout button:hover {
+    transition: .1s ease;
+    transform: scale(1.15);
+    color: red;
+}

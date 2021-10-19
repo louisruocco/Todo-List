@@ -49,7 +49,8 @@ router.post("/login", redirectHome, (req, res) => {
         }
 
         if(!user || !(await bcrypt.compare(password, user[0].password))){
-            return res.send("User Not Found");
+            req.flash("usernotfound", "User Not Found");
+            return res.redirect("/login");
         } else {
             const id = user[0].id;
             req.session.userId = id;
