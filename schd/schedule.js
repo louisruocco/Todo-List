@@ -39,7 +39,7 @@ const sendEmail = schedule.scheduleJob("0 */2 * * *", () => {
                         const options = {
                             from: process.env.EMAIL,
                             to: todo.email,
-                            subject: "TODO LIST ALERTS", 
+                            subject: "TODO LIST ALERT", 
                             html,
                         };
             
