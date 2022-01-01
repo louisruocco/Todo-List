@@ -100,6 +100,10 @@ input {
     margin: auto;
 }
 
+.input-section input {
+    width: 80%;
+}
+
 .input-section button {
     margin-top: 20px;
     background: none;
@@ -198,4 +202,93 @@ input {
 .todo button:hover {
     transition: .2s ease;
     transform: scale(1.15);
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+}
+
+.logout button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: rgba(255, 0, 0, 0.616);
+    transition: .1s ease;
+}
+
+.logout button:hover {
+    transition: .1s ease;
+    transform: scale(1.15);
+    color: red;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        height: 30vh;
+    }
+
+    .title h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .authentication {
+        flex-direction: column;
+    }
+
+    .authentication a {
+        height: -10%;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        position: absolute;
+    }
+
+    .input-section {
+        width: 90%;
+        height: 50%;
+    }
+
+    .input-section input {
+        width: 80%;
+    }
+
+    .todo-list input {
+        font-size: 18px;
+        width: 200px;
+    }
+
+    .add {
+        height: 33px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .todo {
+        width: 300px;
+    }
+
+    .logout {
+        padding-top: 20px;
+    }
+
+    .logout button {
+        font-size: 18px;
+    }
 }
