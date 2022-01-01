@@ -7,13 +7,13 @@ const db = require("../db");
 
 dotenv.config({path: "./.env"});
 
-const sendEmail = schedule.scheduleJob("0 */2 * * *", () => {
+const sendEmail = schedule.scheduleJob("* /5 * * *", () => {
     db.query("SELECT DISTINCT email FROM todos", (err, email) => {
         if(err){
             return console.log(err)
         } else {
-            email.map(todo => {
-                return db.query("SELECT email, todo FROM todos WHERE email = ?", [todo.email], (err, item) => {
+            email.forEach(recipient => {
+                return db.query("SELECT email, todo FROM todos WHERE email = ?", [recipient.email], (err, item) => {
                     if(err){
                         return console.log(err);
                     } else {
@@ -34,11 +34,12 @@ const sendEmail = schedule.scheduleJob("0 */2 * * *", () => {
                             <ul>
                                 ${items.join("")}
                             </ul>
+                            <h3>Make sure to tick them off the list when done!</h3>
                         `
                         
                         const options = {
                             from: process.env.EMAIL,
-                            to: todo.email,
+                            to: recipient.email,
                             subject: "TODO LIST ALERT", 
                             html,
                         };
