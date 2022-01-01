@@ -7,7 +7,7 @@ const db = require("../db");
 
 dotenv.config({path: "./.env"});
 
-const sendEmail = schedule.scheduleJob("* /5 * * *", () => {
+const sendEmail = schedule.scheduleJob("0 * * * *", () => {
     db.query("SELECT DISTINCT email FROM todos", (err, email) => {
         if(err){
             return console.log(err)
