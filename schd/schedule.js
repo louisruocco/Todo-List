@@ -7,42 +7,13 @@ const db = require("../db");
 
 dotenv.config({path: "./.env"});
 
-<<<<<<< HEAD
-const sendEmail = schedule.scheduleJob(""0 */2 * * *", () => {
+const sendEmail = schedule.scheduleJob("0 */2 * * *", () => {
     db.query("SELECT * FROM todos", (err, todos) => {
         if(err){
             return console.log(err)
         } else {
             todos.forEach(todo => {
                 db.query("SELECT email, todo FROM todos WHERE email = ?", [todo.email], (err, item) => {
-=======
-const sendEmail = schedule.scheduleJob("0 */2 * * *", () => {
-    db.query("SELECT * FROM todos", (err, email) => {
-        if(err){
-            return console.log(err)
-        } else {
-            email.forEach(todo => {
-                const transporter = nodemailer.createTransport({
-                    service: "gmail", 
-                    auth: {
-                        user: process.env.EMAIL,
-                        pass: process.env.PASS
-                    }
-                })
-    
-                const options = {
-                    from: process.env.EMAIL,
-                    to: todo.email,
-                    subject: `TODO ALERT: ${todo.todo}`,
-                    html: `
-                    <h1>${todo.todo} is outstanding</h1>
-    
-                    <b>Make Sure to tick it off the list when completed!</b>
-                    `
-                };
-    
-                transporter.sendMail(options, (err, info) => {
->>>>>>> 908cee9d97ab93c9bc0b98b4c076e9cf96355ce9
                     if(err){
                         return console.log(err);
                     } else {
