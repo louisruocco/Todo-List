@@ -233,7 +233,7 @@ input {
     color: red;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 400px) {
+@media only screen and (min-width: 200px) and (max-width: 600px) {
     .title {
         height: 20vh;
     }
@@ -278,5 +278,11 @@ input {
 
     .todos div {
         width: 300px;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+    .container {
+
     }
 }
