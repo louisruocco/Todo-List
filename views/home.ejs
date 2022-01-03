@@ -31,20 +31,20 @@
                 <h3><%= todoexists %></h3>
             </div>
         <% } %> 
-        <div class="todos">
-            <% todos.forEach(todo => { %>
-                <ul>
-                   <div class="todo">
-                        <li><%= todo.todo %></li>
-                        <form action="/auth/<%= todo.todo %>/deleteTodo" method = "POST">
-                            <button class = "delete">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </form>                     
-                   </div>  
-                </ul>
-            <% }) %>
-        </div>
+    </div>
+    <div class="todos">
+        <% todos.forEach(todo => { %>
+            <ul>
+               <div class="todo">
+                    <li><%= todo.todo %></li>
+                    <form action="/auth/<%= todo.todo %>/deleteTodo" method = "POST">
+                        <button class = "delete">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </form>                     
+               </div>  
+            </ul>
+        <% }) %>
     </div>
 </body>
 </html>

@@ -171,12 +171,20 @@ input {
     margin: auto;
 }
 
+.todos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
 .todo {
     display: flex;
     width: 700px;
     justify-content: space-between;
     background: white;
-    margin: 30px;
+    margin: 15px;
     border-radius: 10px;
 }
 
@@ -185,6 +193,7 @@ input {
     padding: 10px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 20px;
+    word-wrap: normal;
 }
 
 .todo button {
@@ -224,70 +233,16 @@ input {
     color: red;
 }
 
-@media only screen and (max-width: 1000px) {
-    body {
-        background-size: cover;
-        background-position: center;
-    }
-
-    .title {
-        display: flex;
-        justify-content: center;
-        height: 30vh;
-    }
-
+@media only screen and (min-width: 200px) and (max-width: 400px) {
     .title h1 {
-        font-size: 50px;
-        text-align: center;
+        font-size: 40px;
     }
 
-    .authentication {
-        flex-direction: column;
-    }
-
-    .authentication a {
-        height: -10%;
-        text-align: center;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        position: absolute;
-    }
-
-    .input-section {
-        width: 90%;
-        height: 50%;
-    }
-
-    .input-section input {
-        width: 80%;
+    .todo-list {
+        margin: auto;
     }
 
     .todo-list input {
-        font-size: 18px;
-        width: 200px;
-    }
-
-    .add {
-        height: 33px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .todo {
-        width: 300px;
-    }
-
-    .logout {
-        padding-top: 20px;
-    }
-
-    .logout button {
-        font-size: 18px;
+        width: 75%;
     }
 }

@@ -12,7 +12,7 @@ const sendEmail = schedule.scheduleJob("0 * * * *", () => {
         if(err){
             return console.log(err)
         } else {
-            email.forEach(recipient => {
+            email.map(recipient => {
                 return db.query("SELECT email, todo FROM todos WHERE email = ?", [recipient.email], (err, item) => {
                     if(err){
                         return console.log(err);
