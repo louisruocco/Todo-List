@@ -234,8 +234,38 @@ input {
 }
 
 @media only screen and (min-width: 200px) and (max-width: 400px) {
+    .title {
+        height: 20vh;
+    }
+    
     .title h1 {
         font-size: 40px;
+    }
+
+    .authentication {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .container h1 {
+        margin-top: 50px;
+        height: 20vh;
+    }
+
+    .input-section {
+        height: 50%;
+        width: 80%;
+    }
+
+    .input-section input {
+        font-size: 20px;
     }
 
     .todo-list {
@@ -244,5 +274,9 @@ input {
 
     .todo-list input {
         width: 75%;
+    }
+
+    .todos div {
+        width: 300px;
     }
 }
